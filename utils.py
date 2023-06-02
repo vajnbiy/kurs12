@@ -1,7 +1,7 @@
 import json
 
 def load_date(path):
-    with open (path) as file:
+    with open (path, encoding="utf-8") as file:
         data = json.load(file)
     return data
 
@@ -33,9 +33,9 @@ def print_oper(dict):
                 break
         output += "\n"
         output += f"{' '.join(from_[0:index])}"
-        output += f"{from_[index][:4]} {from_[index][5:7]}** {'*' * 4} {from_[index][-4:]} "
+        output += f" {from_[index][:4]} {from_[index][5:7]}** {'*' * 4} {from_[index][-4:]} "
 
-    output += f"-> Счет **{dict['to'][-4:]}"
+    output += f" -> Счет **{dict['to'][-4:]}"
 
     output += "\n"
     output += f"{dict['operationAmount']['amount']} {dict['operationAmount']['currency']['name']}"

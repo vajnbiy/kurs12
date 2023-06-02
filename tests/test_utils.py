@@ -241,7 +241,7 @@ def test_lates__take():
     assert lates_take(default) == goal
 
 def test_load__date():
-    with open("operation.json") as file:
+    with open("operation.json", encoding="utf-8") as file:
         assert load_date("operation.json") == json.load(file)
 
 
